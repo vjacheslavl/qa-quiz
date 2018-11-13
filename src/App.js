@@ -4,6 +4,7 @@ import rightImage from './images/right-image.jpg';
 import Timer from './components/Timer';
 import SpotTheDifferences from './components/SpotTheDifferences';
 import './App.css';
+import QuizQuestions from "./components/QuizQuestions";
 
 class App extends Component {
     constructor() {
@@ -47,27 +48,7 @@ class App extends Component {
                     <h1>QA Quiz!</h1>
                 </header>
                 <Timer time={this.state.time}></Timer>
-                <h3>Some theoretical questions!</h3>
-                <div class="questions">
-
-                    <div className="question">
-                        <div><b> 1. What AAA stands for?</b></div>
-                        <form>
-                            <div><input type="radio" name="gr1"/>Arrange Act Assert</div>
-                            <div><input type="radio" name="gr1"/>Act Act Act</div>
-                            <div><input type="radio" name="gr1"/>Artificial Alien Assault</div>
-                        </form>
-                    </div>
-                    <div className="question">
-                        <div><b> 2. Which of the following is not a performance test tool?</b></div>
-                        <form>
-                            <div><input type="radio" name="gr2"/>Gatling</div>
-                            <div><input type="radio" name="gr2"/>LoadRunner</div>
-                            <div><input type="radio" name="gr2"/>Performer</div>
-                            <div><input type="radio" name="gr2"/>Jmeter</div>
-                        </form>
-                    </div>
-                </div>
+                <QuizQuestions/>
                 <h3>Whats wrong in this code?</h3>
                 <div><code>
                     function okruglik(num)
