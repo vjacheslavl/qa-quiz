@@ -1,1 +1,4 @@
-npm start
+npm startawsmobile publish
+
+awsmobile push
+awsmobile publish
