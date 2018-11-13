@@ -19,7 +19,7 @@ let quizQuestionsList = [
                 id: "q1_3"
             },
             {
-                answer: "Allocate Attribute Assign",
+                answer: "Testing of high budget video games",
                 correct: false,
                 id: "q1_4"
             }
