@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import leftImage from "../images/mw5.png";
 import rightImage from "../images/mw6.png";
 import answersCoords from '../data/answers';
+import {bindActionCreators} from 'redux';
+import {saveAnswers} from '../actions/index';
+import {connect} from 'react-redux';
 
 class SpotTheDifferences extends Component {
 
@@ -29,14 +32,15 @@ class SpotTheDifferences extends Component {
         console.log('x is ' + mousePos.x);
         console.log('y is ' + mousePos.y);
 
+        console.log(this.props.spotTheDifferencReduce)
+
+
         let answers = this.state.answersCoords;
-        let correctAnswer = false;
         console.log(answers);
         for (let i = 0; i < answers.length; i++) {
             if (!answers[i].found) {
                 if ((answers[i].coords[0] - 15) < mousePos.x && mousePos.x < (answers[i].coords[0] + 15)) {
                     if ((answers[i].coords[1] - 15) < mousePos.y && mousePos.y < (answers[i].coords[1] + 15)) {
-                        correctAnswer = true;
                         answers[i].found = true;
                         this.setState({
                             answersCoords: answers
@@ -48,22 +52,16 @@ class SpotTheDifferences extends Component {
                 }
             }
         }
-        if (!correctAnswer) {
-          //  this.stop();
-            if (this.state > 5000) {
-                this.setState({time: (this.state.time - 5000)}, () => this.tick());
-            }
-
-        }
+        this.props.storeAnswers(answers);
     }
 
     render() {
         return <div>
             <h3>Spot {this.countQuestions()} differences</h3>
-        <div className="canvas-container">
-            <canvas id="left-canvas" width="520" height="922" onClick={this.handleClick.bind(this)}></canvas>
-            <canvas id="right-canvas" width="520" height="922" onClick={this.handleClick.bind(this)}></canvas>
-        </div>
+            <div className="canvas-container">
+                <canvas id="left-canvas" width="520" height="922" onClick={this.handleClick.bind(this)}></canvas>
+                <canvas id="right-canvas" width="520" height="922" onClick={this.handleClick.bind(this)}></canvas>
+            </div>
         </div>
     }
 
@@ -125,4 +123,15 @@ class SpotTheDifferences extends Component {
     }
 }
 
-export default SpotTheDifferences;
+function mapStateToProps(state) {
+    return {
+        spotTheDifferencReduce: state.spotTheDifferencReduce
+    }
+
+}
+
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({storeAnswers: saveAnswers}, dispatch)
+}
+
+export default connect(mapStateToProps,matchDispatchToProps)(SpotTheDifferences);
