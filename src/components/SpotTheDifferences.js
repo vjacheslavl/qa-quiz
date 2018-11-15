@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import leftImage from "../images/left-image.jpg";
-import rightImage from "../images/right-image.jpg";
+import leftImage from "../images/mw5.png";
+import rightImage from "../images/mw6.png";
 import answersCoords from '../data/answers';
 
 class SpotTheDifferences extends Component {
@@ -22,7 +22,6 @@ class SpotTheDifferences extends Component {
      *  @return {undefined}
      * */
     handleClick(e) {
-        const canvas = document.getElementById(e.target.id);
         const mousePos = {
             x: e.nativeEvent.offsetX,
             y: e.nativeEvent.offsetY
@@ -59,9 +58,12 @@ class SpotTheDifferences extends Component {
     }
 
     render() {
-        return <div className="canvas-container">
-            <canvas id="left-canvas" width="350" height="386" onClick={this.handleClick.bind(this)}></canvas>
-            <canvas id="right-canvas" width="350" height="386" onClick={this.handleClick.bind(this)}></canvas>
+        return <div>
+            <h3>Spot {this.countQuestions()} differences</h3>
+        <div className="canvas-container">
+            <canvas id="left-canvas" width="520" height="922" onClick={this.handleClick.bind(this)}></canvas>
+            <canvas id="right-canvas" width="520" height="922" onClick={this.handleClick.bind(this)}></canvas>
+        </div>
         </div>
     }
 
@@ -99,7 +101,7 @@ class SpotTheDifferences extends Component {
             centerX, centerY - height / 2); // startpoint top
 
         ctx.lineWidth = 3;
-        ctx.strokeStyle = '#c3414f';
+        ctx.strokeStyle = '#00ff99';
         ctx.stroke();
     }
 
@@ -116,6 +118,10 @@ class SpotTheDifferences extends Component {
             console.log('img loaded');
             context.drawImage(base_image, 0, 0);
         }
+    }
+
+    countQuestions() {
+        return this.state.answersCoords.length;
     }
 }
 

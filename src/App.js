@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import leftImage from './images/left-image.jpg';
-import rightImage from './images/right-image.jpg';
 import Timer from './components/Timer';
 import SpotTheDifferences from './components/SpotTheDifferences';
 import './App.css';
@@ -44,9 +42,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <header className="App-header">
-                    <h1>QA Quiz!</h1>
-                </header>
+                <div className="container">
+                    <h1>Evo QA Quiz!</h1>
                 <Timer time={this.state.time}></Timer>
                 <QuizQuestions/>
                 <h3>Whats wrong in this code?</h3>
@@ -59,8 +56,8 @@ class App extends Component {
                     }
                         return summi;
                     }</code></div>
-                <h3>Spot 10 differences</h3>
-                <SpotTheDifferences></SpotTheDifferences>
+                <SpotTheDifferences></SpotTheDifferences><button type="submit" className="btn btn-primary">Submit quiz answers</button>
+                </div>
             </div>
         );
     }

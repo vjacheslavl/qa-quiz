@@ -13,17 +13,14 @@ class QuizQuestions extends Component {
     createQuiz = () => {
         let quiz = []
         let questions = this.state.quizQuestionsList;
-        console.log(questions);
+      //  console.log(questions);
         for (let i = 0; i < questions.length; i++) {
             let answers = []
             for (let j = 0; j < questions[i].answers.length; j++) {
-                console.log(questions[i].answers);
-                answers.push(<div><input type="radio" name="{questions[i].answers[j].name}"/>{questions[i].answers[j].answer}</div>)
+                answers.push(<div className="form-check"><label><input key="{questions[i].answers[j].toString()}" type="radio" className="form-check-input" name="{questions[i].answers[j].name}"/>{questions[i].answers[j].answer}</label></div>)
             }
-            quiz.push(<div className='question'>
-                <div><b>{questions[i].question}</b></div>
-                {answers}
-                </div>)
+            quiz.push(<div><legend>{questions[i].question}</legend>
+                {answers}</div>)
         }
 
         return quiz
@@ -35,8 +32,12 @@ class QuizQuestions extends Component {
 
         return (
             <div>
-                <h3>Some theoretical questions!</h3>
+            <h3>Some theoretical questions!</h3>
+            <form>
+                <fieldset clasname="form-group">
                 {this.createQuiz()}
+                </fieldset>
+            </form>
             </div>
         )
     }
