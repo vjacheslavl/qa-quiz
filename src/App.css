@@ -1,11 +1,11 @@
 /* Canvas Styling */
 .canvas-container {
   margin: 0 auto;
-  max-width: 1040px;
+  max-width: 1028px;
 }
 canvas {
-  width: 520px;
-  height: 922px;
+  width: 514px;
+  height: 924px;
   display: inline-block;
 }
 

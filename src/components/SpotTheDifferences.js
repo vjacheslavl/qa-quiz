@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import leftImage from "../images/mw5.png";
-import rightImage from "../images/mw6.png";
+import leftImage from "../images/mw7.jpg";
+import rightImage from "../images/mw8.jpg";
 import answersCoords from '../data/answers';
 import {bindActionCreators} from 'redux';
 import {saveAnswers} from '../actions/index';
@@ -59,8 +59,8 @@ class SpotTheDifferences extends Component {
         return <div>
             <h3>Spot {this.countQuestions()} differences</h3>
             <div className="canvas-container">
-                <canvas id="left-canvas" width="520" height="922" onClick={this.handleClick.bind(this)}></canvas>
-                <canvas id="right-canvas" width="520" height="922" onClick={this.handleClick.bind(this)}></canvas>
+                <canvas id="left-canvas" width="514" height="914" onClick={this.handleClick.bind(this)}></canvas>
+                <canvas id="right-canvas" width="514" height="914" onClick={this.handleClick.bind(this)}></canvas>
             </div>
         </div>
     }

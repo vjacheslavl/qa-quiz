@@ -1,6 +1,6 @@
 let quizQuestionsList = [
     {
-        question: "1. What AAA stands for?",
+        question: "1. What does \"AAA pattern\" stand for?",
         name: "q1",
         answers: [
             {
@@ -14,9 +14,14 @@ let quizQuestionsList = [
                 id: "q1_2"
             },
             {
-                answer: "Artificial Alien Assault",
+                answer: "Allocate Attribute Assign",
                 correct: false,
                 id: "q1_3"
+            },
+            {
+                answer: "Testing of high budget video games",
+                correct: false,
+                id: "q1_4"
             }
         ]
     },
@@ -40,7 +45,7 @@ let quizQuestionsList = [
                 id: "q2_3"
             },
             {
-                answer: "Jmeter",
+                answer: "JMeter",
                 correct: false,
                 id: "q2_4"
             }
@@ -57,12 +62,12 @@ let quizQuestionsList = [
             },
             {
                 answer: "FlatMap",
-                correct: false,
+                correct: true,
                 id: "q3_2"
             },
             {
                 answer: "WordSpec",
-                correct: true,
+                correct: false,
                 id: "q3_3"
             },
             {
@@ -73,26 +78,26 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "4. What \"loan pattern\" in ScalaTest stands for?",
+        question: "4. What does \"loan pattern\" in ScalaTest stand for?",
         name: "q4",
         answers: [
             {
-                answer: "loan the hardware from Amazon and run tests in cloud",
+                answer: "Loan the hardware from Amazon and run tests in cloud",
                 correct: false,
                 id: "q4_1"
             },
             {
-                answer: "share single browser between multiple test suites",
+                answer: "Share single browser between multiple test suites",
                 correct: false,
                 id: "q4_2"
             },
             {
-                answer: "create the fixtures, loan them to test and clean up afterwards",
+                answer: "Create the test fixtures, loan them to test and clean up afterwards",
                 correct: true,
                 id: "q4_3"
             },
             {
-                answer: "use global variables to share context between tests.",
+                answer: "Use global variables to share context between tests",
                 correct: false,
                 id: "q4_4"
             }
@@ -114,13 +119,39 @@ let quizQuestionsList = [
             },
             {
                 answer: "Jasmine, Yarn, Node.js, JsUnit",
-                correct: true,
+                correct: false,
                 id: "q5_3"
             },
             {
-                answer: "<some other answer>",
-                correct: false,
+                answer: "Mocha, Jest, Jasmine, Chai",
+                correct: true,
                 id: "q5_4"
+            }
+        ]
+    },
+    {
+        question: "6. Given 2 of Hearts and 7 of Hearts in Baccarat game score 9, 4 of Clubs and 7 of Spades score 1, 10 of Diamonds and Ace of Spades score 1, what would be the score out of 7 of Hearts and 7 of Spades?",
+        name: "q6",
+        answers: [
+            {
+                answer: "14",
+                correct: false,
+                id: "q6_1"
+            },
+            {
+                answer: "9",
+                correct: false,
+                id: "q6_2"
+            },
+            {
+                answer: "1",
+                correct: false,
+                id: "q6_3"
+            },
+            {
+                answer: "4",
+                correct: true,
+                id: "q6_4"
             }
         ]
     }
