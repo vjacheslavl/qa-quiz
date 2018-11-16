@@ -4,13 +4,13 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import indexReducer from './reducers/index';
+import emptyReducers from './reducers/reducer-answers';
 import * as serviceWorker from './serviceWorker';
 import PageRoutes from "./PageRoutes";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const store = createStore(
-    indexReducer, /* preloadedState, */
-    +  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    emptyReducers,  composeWithDevTools()
 );
 
 ReactDOM.render(<Provider store={store}>

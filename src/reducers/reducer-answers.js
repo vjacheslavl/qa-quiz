@@ -1,8 +1,15 @@
-export default function (state = null, action) {
+export default function (state = {spotTheDifferencReduce: {}, answers: {}, personName: ""}, action) {
     switch (action.type) {
         case "ANSWERS_SAVED":
-            return action.payload;
-            break;
+            return {
+                ...state,
+                answers: action.payload
+            }
+        case "PERSON_SAVED":
+            return {
+                ...state,
+                personName: action.payload,
+            }
     }
     return state;
 }
