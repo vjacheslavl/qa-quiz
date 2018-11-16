@@ -52,7 +52,7 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "3. What is not a style of ScalaTest specs?",
+        question: "3. Which is not a style of ScalaTest specs?",
         name: "q3",
         answers: [
             {
@@ -130,28 +130,80 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "6. Given 2 of Hearts and 7 of Hearts in Baccarat game score 9, 4 of Clubs and 7 of Spades score 1, 10 of Diamonds and Ace of Spades score 1, what would be the score out of 7 of Hearts and 7 of Spades?",
+        question: "6. You are hunting a bug and want to follow the server log real time - to see what gets appended there upon your interactions with UI. What is most likely your first choice given the log is huge?",
         name: "q6",
         answers: [
             {
-                answer: "14",
+                answer: "less server.log",
                 correct: false,
                 id: "q6_1"
             },
             {
-                answer: "9",
-                correct: false,
+                answer: "tail -f server.log",
+                correct: true,
                 id: "q6_2"
             },
             {
-                answer: "1",
+                answer: "grep NullPointerException server.log",
                 correct: false,
                 id: "q6_3"
             },
             {
-                answer: "4",
-                correct: true,
+                answer: "Do my scenario, download the full log file and view it in the Notepad",
+                correct: false,
                 id: "q6_4"
+            }
+        ]
+    },
+    {
+        question: "7. Think of BDD test that needs to check that count of elements on the page is correct. Where would you put \“assertEquals(\“Incorrect number of elements displayed\”, count, 5)\” statement?",
+        name: "q7",
+        answers: [
+            {
+                answer: "Right in the .feature scenario",
+                correct: false,
+                id: "q7_1"
+            },
+            {
+                answer: "In the page object method",
+                correct: false,
+                id: "q7_2"
+            },
+            {
+                answer: "In the step definition of the Then step",
+                correct: true,
+                id: "q7_3"
+            },
+            {
+                answer: "In the utils helper function",
+                correct: false,
+                id: "q7_4"
+            }
+        ]
+    },
+    {
+        question: "8. What is Selenoid?",
+        name: "q8",
+        answers: [
+            {
+                answer: "A powerful implementation of Selenium hub using Docker containers to launch browsers",
+                correct: true,
+                id: "q8_1"
+            },
+            {
+                answer: "A framework for test automation powered by Selenium WebDriver that improves work with dynamic content, selectors, timeouts",
+                correct: false,
+                id: "q8_2"
+            },
+            {
+                answer: "An implementation of Selenium WebDriver for Python",
+                correct: false,
+                id: "q8_3"
+            },
+            {
+                answer: "A part of the Selenium Suite that specializes in running multiple tests across different browsers, operating systems, and machines in parallel",
+                correct: false,
+                id: "q8_4"
             }
         ]
     }
