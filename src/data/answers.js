@@ -26,6 +26,10 @@ let answersCoords = [
     {
         coords: [109, 370],
         found: false
+    },
+    {
+        coords: [88, 10],
+        found: false
     }
 ];
 
