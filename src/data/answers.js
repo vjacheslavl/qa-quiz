@@ -30,6 +30,26 @@ let answersCoords = [
     {
         coords: [88, 10],
         found: false
+    },
+    {
+        coords: [86, 509],
+        found: false
+    },
+    {
+        coords: [444, 696],
+        found: false
+    },
+    {
+        coords: [357, 666],
+        found: false
+    },
+    {
+        coords: [103, 917],
+        found: false
+    },
+    {
+        coords: [153, 919],
+        found: false
     }
 ];
 
