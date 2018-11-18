@@ -23,7 +23,7 @@ class SubmitAnswers extends Component {
             console.log("Result is" + result)
 
         });
-        this.props.history.push('/')
+        this.props.history.push('/completed')
     }
 
 }

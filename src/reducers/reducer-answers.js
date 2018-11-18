@@ -15,6 +15,7 @@ export default function (state = {differences: {}, answers: {}, personName: ""},
                 ...state,
                 personName: action.payload,
             }
+        default:
+            return state;
     }
-    return state;
 }

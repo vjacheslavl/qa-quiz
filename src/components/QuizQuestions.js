@@ -26,7 +26,7 @@ class QuizQuestions extends Component {
     }
 
     createQuiz = () => {
-        let quiz = []
+        let quiz = [];
         let questions = quizQuestionsList;
         for (let i = 0; i < questions.length; i++) {
             let answers = []
@@ -42,7 +42,7 @@ class QuizQuestions extends Component {
                 </label></div>)
             }
             let img;
-            if (questions[i].image != undefined) {
+            if (questions[i].image !== undefined) {
                 img = <img src={require("../images/" + questions[i].image)}/>;
             }
             quiz.push(<div key={i}>

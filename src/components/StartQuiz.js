@@ -3,7 +3,6 @@ import {withRouter} from 'react-router-dom'
 import {bindActionCreators} from "redux";
 import {savePerson} from "../actions/savePerson";
 import connect from "react-redux/es/connect/connect";
-import answersCoords from "../data/answers";
 
 class StartQuiz extends Component {
 
@@ -43,7 +42,7 @@ class StartQuiz extends Component {
 
 function mapStateToProps(state) {
     return {
-        person: state.personName
+        personName: state.personName
     }
 }
 
