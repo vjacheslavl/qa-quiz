@@ -47,7 +47,7 @@ class QuizQuestions extends Component {
             }
             quiz.push(<div key={i}>
                 <legend key={i}>{i + 1}. {questions[i].question}</legend>
-                {answers}{img}</div>)
+                {img}{answers}</div>)
         }
 
         return quiz

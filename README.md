@@ -1,4 +1,7 @@
-npm startawsmobile publish
+# Start the application 
 
-awsmobile push
-awsmobile publish
+npm start
+
+# Deploy to AWS
+- awsmobile publish
+- awsmobile push
