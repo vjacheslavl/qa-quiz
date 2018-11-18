@@ -5,8 +5,11 @@ import {withRouter} from 'react-router-dom'
 class SubmitAnswers extends Component {
 
     render() {
-        return <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Submit quiz
-            answers</button>
+        return <div className="text-center m-5">
+            <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Submit quiz
+                answers
+            </button>
+        </div>
     }
 
     handleClick(e) {

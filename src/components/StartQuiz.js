@@ -20,9 +20,9 @@ class StartQuiz extends Component {
 
 
     render() {
-        return <div>
-            <label htmlFor="exampleInputEmail1">Email address</label>
-            <input type="email" className="form-control" id="personName" aria-describedby="emailHelp"
+        return <div className="text-center m-5">
+            <label>Take our QA quiz to test your knowledge and win a prize!</label>
+            <input type="email" className="form-control" id="personName"
                    onChange={this.handleChange.bind(this)}
                    placeholder="Enter email"/>
             <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone
