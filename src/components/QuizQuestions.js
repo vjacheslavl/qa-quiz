@@ -1,21 +1,29 @@
 import React, {Component} from 'react';
 import quizQuestionsList from '../data/quizQuestions';
 import scoreQuiz from "../images/scoreQuiz.jpg";
+import {bindActionCreators} from "redux";
+import {saveAnswers} from "../actions/saveAnswers";
+import connect from "react-redux/es/connect/connect";
 
 class QuizQuestions extends Component {
 
     constructor() {
         super();
-        const quizAnswers = quizQuestionsList.map((question) => questionToAnswers(question.name, ""))
-        console.log(quizAnswers)
+        const quizAnswers = quizQuestionsList.map((question) => questionToAnswers(question.name, ""));
+        console.log(quizAnswers);
         this.state = {
             quizAnswers
         };
     }
 
+    componentDidMount() {
+        this.props.storeAnswers(this.state.quizAnswers);
+    }
+
+
     handleClick(e) {
-        this.state.quizAnswers = processAnswers(this.state.quizAnswers, e.target.getAttribute("name"), e.target.getAttribute("value"))
-        console.log(this.state.quizAnswers)
+        this.state.quizAnswers = processAnswers(this.state.quizAnswers, e.target.getAttribute("name"), e.target.getAttribute("value"));
+        this.props.storeAnswers(this.state.quizAnswers);
     }
 
     createQuiz = () => {
@@ -84,4 +92,15 @@ function processAnswers(previousAnswers, question, newAnswer) {
     return previousAnswers.map((prevAnswer) => questionToAnswers(prevAnswer.question, prevAnswer.question === question ? newAnswer : prevAnswer.answer))
 }
 
-export default QuizQuestions;
+function mapStateToProps(state) {
+    return {
+        spotTheDifferencReduce: state.spotTheDifferencReduce
+    }
+
+}
+
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({storeAnswers: saveAnswers}, dispatch)
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(QuizQuestions);

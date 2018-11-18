@@ -3,7 +3,7 @@ import leftImage from "../images/mw7.jpg";
 import rightImage from "../images/mw8.jpg";
 import answersCoords from '../data/answers';
 import {bindActionCreators} from 'redux';
-import {saveAnswers} from '../actions/saveAnswers';
+import {saveDifferences} from '../actions/saveDifferences';
 import {connect} from 'react-redux';
 
 class SpotTheDifferences extends Component {
@@ -17,6 +17,7 @@ class SpotTheDifferences extends Component {
 
     componentDidMount() {
         this.handleCanvas();
+        this.props.storeDifferences(answersCoords);
     }
 
     /** Event handled for click events on images to spot differences
@@ -52,7 +53,7 @@ class SpotTheDifferences extends Component {
                 }
             }
         }
-        this.props.storeAnswers(answers);
+        this.props.storeDifferences(answers);
         console.log("PERSON " + this.props.person)
     }
 
@@ -131,7 +132,7 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-    return bindActionCreators({storeAnswers: saveAnswers}, dispatch)
+    return bindActionCreators({storeDifferences: saveDifferences}, dispatch)
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(SpotTheDifferences);

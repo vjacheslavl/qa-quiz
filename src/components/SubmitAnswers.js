@@ -10,8 +10,13 @@ class SubmitAnswers extends Component {
     }
 
     handleClick(e) {
-        console.log(this.props.personName);
-        insertSomething(this.props.personName).then((result) => {
+        const requestBody = {
+            personName: this.props.personName,
+            answers: this.props.answers,
+            differences: this.props.differences
+        };
+        console.log(requestBody);
+        insertSomething(requestBody).then((result) => {
             console.log("Result is" + result)
 
         });
@@ -32,7 +37,7 @@ async function insertSomething(params) {
             body: JSON.stringify(params)
         });
         let responseJson = await response.json();
-        console.log("RJSON "+responseJson.personName)
+        console.log("RJSON " + responseJson.personName)
         return responseJson.result;
     }
     catch (error) {
@@ -43,7 +48,9 @@ async function insertSomething(params) {
 
 function mapStateToProps(state) {
     return {
-        personName: state.personName
+        personName: state.personName,
+        differences: state.differences,
+        answers: state.answers
     }
 
 }
