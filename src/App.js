@@ -43,8 +43,6 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div className="container">
-                    <h1>Evo QA Quiz!</h1>
                     <Timer time={this.state.time}></Timer>
                     <QuizQuestions/>
                     <h3>Whats wrong in this code?</h3>
@@ -59,7 +57,6 @@ class App extends Component {
                         }</code></div>
                     <SpotTheDifferences/>
                     <SubmitAnswers/>
-                </div>
             </div>
         );
     }
