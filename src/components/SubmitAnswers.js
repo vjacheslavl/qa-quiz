@@ -10,8 +10,8 @@ class SubmitAnswers extends Component {
     }
 
     handleClick(e) {
-        console.log(this.props.answers);
-        insertSomething(this.props.answers).then((result) => {
+        console.log(this.props.personName);
+        insertSomething(this.props.personName).then((result) => {
             console.log("Result is" + result)
 
         });
@@ -23,7 +23,7 @@ class SubmitAnswers extends Component {
 async function insertSomething(params) {
     console.log("params are  " + params)
     try {
-        let response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        let response = await fetch("https://quiz-backend-evo.herokuapp.com/savequiz", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -32,7 +32,7 @@ async function insertSomething(params) {
             body: JSON.stringify(params)
         });
         let responseJson = await response.json();
-        console.log("RJSON "+responseJson)
+        console.log("RJSON "+responseJson.personName)
         return responseJson.result;
     }
     catch (error) {
@@ -43,7 +43,7 @@ async function insertSomething(params) {
 
 function mapStateToProps(state) {
     return {
-        answers: state.answers
+        personName: state.personName
     }
 
 }

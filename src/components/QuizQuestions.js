@@ -6,14 +6,21 @@ class QuizQuestions extends Component {
 
     constructor() {
         super();
+        const quizAnswers = quizQuestionsList.map((question) => questionToAnswers(question.name, ""))
+        console.log(quizAnswers)
         this.state = {
-            quizQuestionsList
+            quizAnswers
         };
+    }
+
+    handleClick(e) {
+        this.state.quizAnswers = processAnswers(this.state.quizAnswers, e.target.getAttribute("name"), e.target.getAttribute("value"))
+        console.log(this.state.quizAnswers)
     }
 
     createQuiz = () => {
         let quiz = []
-        let questions = this.state.quizQuestionsList;
+        let questions = quizQuestionsList;
         for (let i = 0; i < questions.length; i++) {
             let answers = []
             for (let j = 0; j < questions[i].answers.length; j++) {
@@ -22,8 +29,9 @@ class QuizQuestions extends Component {
                            type="radio"
                            className="form-check-input"
                            value={questions[i].answers[j].id}
-                           name={questions[i].name}/>{questions[i].answers[j].answer}
-
+                           name={questions[i].name}
+                           onClick={this.handleClick.bind(this)}/>
+                    {questions[i].answers[j].answer}
                 </label></div>)
             }
             quiz.push(<div key={i}>
@@ -63,6 +71,17 @@ class QuizQuestions extends Component {
         )
     }
 
+}
+
+function questionToAnswers(name, answer) {
+    return {
+        question: name,
+        answer: answer
+    }
+}
+
+function processAnswers(previousAnswers, question, newAnswer) {
+    return previousAnswers.map((prevAnswer) => questionToAnswers(prevAnswer.question, prevAnswer.question === question ? newAnswer : prevAnswer.answer))
 }
 
 export default QuizQuestions;
