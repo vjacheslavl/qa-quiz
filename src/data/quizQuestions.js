@@ -1,6 +1,6 @@
 let quizQuestionsList = [
     {
-        question: "1. What does \"AAA pattern\" stand for?",
+        question: "What does \"AAA pattern\" stand for?",
         name: "q1",
         answers: [
             {
@@ -26,7 +26,7 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "2. Which of the following is not a performance test tool?",
+        question: "Which of the following is not a performance test tool?",
         name: "q2",
         answers: [
             {
@@ -52,7 +52,7 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "3. Which is not a style of ScalaTest specs?",
+        question: "Which is not a style of ScalaTest specs?",
         name: "q3",
         answers: [
             {
@@ -78,7 +78,7 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "4. What does \"loan pattern\" in ScalaTest stand for?",
+        question: "What does \"loan pattern\" in ScalaTest stand for?",
         name: "q4",
         answers: [
             {
@@ -104,7 +104,7 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "5. Which are JavaScript testing frameworks?",
+        question: "Which are JavaScript testing frameworks?",
         name: "q5",
         answers: [
             {
@@ -130,7 +130,7 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "6. You are hunting a bug and want to follow the server log real time - to see what gets appended there upon your interactions with UI. What is most likely your first choice given the log is huge?",
+        question: "You are hunting a bug and want to follow the server log real time - to see what gets appended there upon your interactions with UI. What is most likely your first choice given the log is huge?",
         name: "q6",
         answers: [
             {
@@ -156,7 +156,7 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "7. Think of BDD test that needs to check that count of elements on the page is correct. Where would you put \“assertEquals(\“Incorrect number of elements displayed\”, count, 5)\” statement?",
+        question: "Think of BDD test that needs to check that count of elements on the page is correct. Where would you put “assertEquals(“Incorrect number of elements displayed”, count, 5)” statement?",
         name: "q7",
         answers: [
             {
@@ -182,7 +182,7 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "8. What is Selenoid?",
+        question: "What is Selenoid?",
         name: "q8",
         answers: [
             {
@@ -204,6 +204,34 @@ let quizQuestionsList = [
                 answer: "A part of the Selenium Suite that specializes in running multiple tests across different browsers, operating systems, and machines in parallel",
                 correct: false,
                 id: "q8_4"
+            }
+        ]
+    },
+    {
+        question: "Baccarat is a comparing card game played between two hands, the Player and the Banker.\n" +
+            "Would you calculate the value of last hand on the picture?",
+        name: "q9",
+        image: "scoreQuiz.jpg",
+        answers: [
+            {
+                answer: "18",
+                correct: false,
+                id: "q9_1"
+            },
+            {
+                answer: "1",
+                correct: false,
+                id: "q9_2"
+            },
+            {
+                answer: "8",
+                correct: true,
+                id: "q9_3"
+            },
+            {
+                answer: "9",
+                correct: false,
+                id: "q9_4"
             }
         ]
     }
