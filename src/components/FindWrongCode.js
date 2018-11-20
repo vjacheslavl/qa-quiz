@@ -43,8 +43,8 @@ class FindWrongCode extends Component {
             <div>
                 <div className="highlight">
                     {this.state.someText.split("\n").map((item, key) => {
-                        return <span className="codeLine" key={key}
-                                     onClick={this.changeColor.bind(this)}>{item}<br/></span>;
+                        return <div className="codeLine" key={key}
+                                     onClick={this.changeColor.bind(this)}>{item}<br/></div>;
                     })}
                 </div>
             </div>
