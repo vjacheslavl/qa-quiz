@@ -43,7 +43,7 @@ class QuizQuestions extends Component {
             }
             let img;
             if (questions[i].image !== undefined) {
-                img = <img src={require("../images/" + questions[i].image)}/>;
+                img = <img className="quizImage" src={require("../images/" + questions[i].image)}/>;
             }
             quiz.push(<div className="singleQuestion" key={i}>
                 <legend key={i}>{i + 1}. {questions[i].question}</legend>

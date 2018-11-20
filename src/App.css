@@ -12,6 +12,9 @@
 .singleQuestion {
     margin-top: 20px;
 }
+.quizImage {
+    margin-bottom: 10px;
+}
 .redHighlight {
     background-color: #f5c6cb;
 }
