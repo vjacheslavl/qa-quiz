@@ -9,6 +9,9 @@
     font-size: 70%;
     width: 100%;
 }
+.singleQuestion {
+    margin-top: 20px;
+}
 .redHighlight {
     background-color: #f5c6cb;
 }
