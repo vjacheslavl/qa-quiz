@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Timer from './components/Timer';
 import SpotTheDifferences from './components/SpotTheDifferences';
+import FindWrongCode from './components/FindWrongCode';
 import SubmitAnswers from './components/SubmitAnswers';
 import './App.css';
 import QuizQuestions from "./components/QuizQuestions";
@@ -43,20 +44,11 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                    <Timer time={this.state.time}></Timer>
-                    <QuizQuestions/>
-                    <h3>Whats wrong in this code?</h3>
-                    <div><code>
-                        function okruglik(num)
-                        iif(isNaN(num))
-                        summi = summi;
-                        else
-                        summi = Math.floor(num);
-                        }
-                        return summi;
-                        }</code></div>
-                    <SpotTheDifferences/>
-                    <SubmitAnswers/>
+                <Timer time={this.state.time}></Timer>
+                <QuizQuestions/>
+                <FindWrongCode/>
+                <SpotTheDifferences/>S
+                <SubmitAnswers/>
             </div>
         );
     }

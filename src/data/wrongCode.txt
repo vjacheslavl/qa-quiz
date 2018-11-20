@@ -1,0 +1,33 @@
+    @Test(groups = BACCARAT_CONTROLLED_SQUEEZE)
+    public void testMostBetsOnPlayerNoExtraCards() {
+        logger.info("Placing Bets");
+        NeonBet[] bets = {
+                new NeonBet(PLAYER, new TaskBarChip[]{CHIP_3})};
+        gamer.simplePlaceBets(bets);
+
+        logger.info("Dealing initial cards");
+        CardType[] initialCards = {CLUBS_6, SPADES_6, DIAMONDS_3, HEARTS_2};
+        dealCard(initialCards[0], POSITION_A, FACE_DOWN);
+        dealCard(initialCards[1], POSITION_B, FACE_DOWN);
+        dealCard(initialCards[2], POSITION_A_2, FACE_DOWN);
+        dealCard(initialCards[3], POSITION_B_2, FACE_DOWN);
+        dealer.waitForStartingCsMessage(true);
+
+        logger.info("Checking that initial cards revealing timer shows");
+        gamer.waitForStatus(STATUS_REVEAL_CARDS);
+        gamer.waitForControlledSqueezeTimer();
+        dealer.waitForFinishingCsMessage(true);
+        gamer.waitControlledSqueezeTimerEnding(sessionConfig);
+        gamer.waitForStatus(STATUS_REVEALING);
+
+        logger.info("Revealing initial cards");
+        dealer.waitForCardSpecialText(POSITION_A, OPEN_BOTH);
+        dealer.waitForCardSpecialText(POSITION_A_2, OPEN_BOTH);
+        revealCard(POSITION_A, FACE_UP, initialCards[0]);
+        revealCard(POSITION_A_2, FACE_UP, initialCards[2]);
+
+        dealer.waitForCardSpecialText(POSITION_B, OPEN_BOTH);
+        dealer.waitForCardSpecialText(POSITION_B_2, OPEN_BOTH);
+        revealCard(POSITION_B, FACE_UP, initialCards[1]);
+        revealCard(POSITION_B_2, FACE_UP, initialCards[3]);
+    }
