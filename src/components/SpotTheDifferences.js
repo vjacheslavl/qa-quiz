@@ -58,9 +58,12 @@ class SpotTheDifferences extends Component {
     }
 
     render() {
+        let found = this.state.answersCoords.filter(answer => answer.found === true).length;
         return <div className="singleQuestion">
-            <legend>{quizQuestionsList.length+2}. Spot {this.countQuestions()} differences between 2 pictures!</legend>
+            <legend>{quizQuestionsList.length + 2}. Spot {this.countQuestions()} differences between 2 pictures!
+            </legend>
             Tap the difference when you found it!
+            (you found {found} of them)
             <div className="canvas-container">
                 <canvas id="left-canvas" width="437" height="777" onClick={this.handleClick.bind(this)}/>
                 <canvas id="right-canvas" width="437" height="777" onClick={this.handleClick.bind(this)}/>
