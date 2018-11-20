@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import quizQuestionsList from '../data/quizQuestions';
 
 class FindWrongCode extends Component {
 
@@ -37,7 +38,7 @@ class FindWrongCode extends Component {
 
     render() {
         return <div>
-            <h3> Whats wrong in this code?</h3>
+            <legend>{quizQuestionsList.length+1}. What is wrong with this code?</legend>
             click the lines that you don't like!
             <div>
                 <div className="highlight">

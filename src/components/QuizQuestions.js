@@ -58,7 +58,7 @@ class QuizQuestions extends Component {
 
         return (
             <div>
-                <h3>Some theoretical questions!</h3>
+                <h3>Please answer following questions</h3>
                 <form>
                     <fieldset clasname="form-group">
                         {this.createQuiz()}

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import leftImage from "../images/mw7.jpg";
 import rightImage from "../images/mw8.jpg";
 import answersCoords from '../data/answers';
+import quizQuestionsList from '../data/quizQuestions';
 import {bindActionCreators} from 'redux';
 import {saveDifferences} from '../actions/saveDifferences';
 import {connect} from 'react-redux';
@@ -59,7 +60,8 @@ class SpotTheDifferences extends Component {
 
     render() {
         return <div>
-            <h3>Spot {this.countQuestions()} differences</h3>
+            <legend>{quizQuestionsList.length+2}. Spot {this.countQuestions()} differences</legend>
+            click the difference when you have found it!
             <div className="canvas-container">
                 <canvas id="left-canvas" width="514" height="914" onClick={this.handleClick.bind(this)}></canvas>
                 <canvas id="right-canvas" width="514" height="914" onClick={this.handleClick.bind(this)}></canvas>

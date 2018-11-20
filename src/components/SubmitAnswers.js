@@ -6,8 +6,7 @@ class SubmitAnswers extends Component {
 
     render() {
         return <div className="text-center m-5">
-            <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Submit quiz
-                answers
+            <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Submit your answers
             </button>
         </div>
     }
