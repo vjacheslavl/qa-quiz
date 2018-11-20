@@ -1,7 +1,13 @@
 /* Canvas Styling */
 .canvas-container {
     margin: 0 auto;
-    max-width: 1028px;
+    max-width: 874px;
+}
+
+canvas {
+    width: 437px;
+    height: 777px;
+    display: inline-block;
 }
 
 .codeLine {
@@ -26,11 +32,7 @@
     border-radius: 4px;
 }
 
-canvas {
-    width: 514px;
-    height: 924px;
-    display: inline-block;
-}
+
 
 /* Timer Styling */
 .timer {

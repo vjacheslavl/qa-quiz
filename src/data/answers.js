@@ -1,54 +1,55 @@
 let answersCoords = [
     {
-        coords: [358, 717],
+        //x,y,width of x
+        coords: [127, 10, 15],
         found: false
     },
     {
-        coords: [229, 834],
+        coords: [290, 29, 15],
         found: false
     },
     {
-        coords: [340, 448],
+        coords: [415, 12, 15],
         found: false
     },
     {
-        coords: [339, 37],
+        coords: [90, 312, 15],
         found: false
     },
     {
-        coords: [496, 15],
+        coords: [287, 379, 15],
         found: false
     },
     {
-        coords: [143, 14],
+        coords: [302, 605, 15],
         found: false
     },
     {
-        coords: [109, 370],
+        coords: [196, 701, 60],
         found: false
     },
     {
-        coords: [88, 10],
+        coords: [90, 771, 15],
         found: false
     },
     {
-        coords: [86, 509],
+        coords: [134, 770, 15],
         found: false
     },
     {
-        coords: [444, 696],
+        coords: [380, 582, 15],
         found: false
     },
     {
-        coords: [357, 666],
+        coords: [302, 560, 15],
         found: false
     },
     {
-        coords: [103, 917],
+        coords: [95, 426, 30],
         found: false
     },
     {
-        coords: [153, 919],
+        coords: [73, 7, 15  ],
         found: false
     }
 ];

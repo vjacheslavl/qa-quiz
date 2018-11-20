@@ -1,0 +1,23 @@
+div.highlight {
+    font-family: monospace;
+    background-color: #fff;
+    width: 95%;
+    border-radius: .25em;
+    box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.45);
+    line-height: 0;
+    counter-reset: line;
+}
+div.highlight div {
+    display: block;
+    line-height: 1.5rem;
+}
+div.highlight div:before {
+    counter-increment: line;
+    width: 2rem;
+    content: counter(line);
+    display: inline-block;
+    border-right: 1px solid #ddd;
+    padding: 0 .5em;
+    margin-right: .5em;
+    color: #888;
+}

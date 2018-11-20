@@ -41,7 +41,7 @@ class SpotTheDifferences extends Component {
         console.log(answers);
         for (let i = 0; i < answers.length; i++) {
             if (!answers[i].found) {
-                if ((answers[i].coords[0] - 15) < mousePos.x && mousePos.x < (answers[i].coords[0] + 15)) {
+                if ((answers[i].coords[0] - answers[i].coords[2]) < mousePos.x && mousePos.x < (answers[i].coords[0] + answers[i].coords[2])) {
                     if ((answers[i].coords[1] - 15) < mousePos.y && mousePos.y < (answers[i].coords[1] + 15)) {
                         answers[i].found = true;
                         this.setState({
@@ -55,16 +55,15 @@ class SpotTheDifferences extends Component {
             }
         }
         this.props.storeDifferences(answers);
-        console.log("PERSON " + this.props.person)
     }
 
     render() {
         return <div className="singleQuestion">
             <legend>{quizQuestionsList.length+2}. Spot {this.countQuestions()} differences</legend>
-            click the difference when you have found it!
+            Tap the difference when you found it!
             <div className="canvas-container">
-                <canvas id="left-canvas" width="514" height="914" onClick={this.handleClick.bind(this)}></canvas>
-                <canvas id="right-canvas" width="514" height="914" onClick={this.handleClick.bind(this)}></canvas>
+                <canvas id="left-canvas" width="437" height="777" onClick={this.handleClick.bind(this)}/>
+                <canvas id="right-canvas" width="437" height="777" onClick={this.handleClick.bind(this)}/>
             </div>
         </div>
     }

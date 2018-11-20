@@ -39,14 +39,12 @@ class FindWrongCode extends Component {
     render() {
         return <div className="singleQuestion">
             <legend>{quizQuestionsList.length+1}. What is wrong with this code?</legend>
-            click the lines that you don't like!
-            <div>
-                <div className="highlight">
+            Tap the lines that look wrong!
+            <div className="highlight">
                     {this.state.someText.split("\n").map((item, key) => {
                         return <div className="codeLine" key={key}
                                      onClick={this.changeColor.bind(this)}>{item}<br/></div>;
                     })}
-                </div>
             </div>
         </div>
     }
