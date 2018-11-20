@@ -24,6 +24,15 @@ class StartQuiz extends Component {
             <input type="email" className="form-control" id="personName"
                    onChange={this.handleChange.bind(this)}
                    placeholder="Enter email"/>
+            <div className="termsAndConditions">
+                Data Controller – TBD <br/>
+                Data Collection Purpose – to be informed about carrier opportunities in TBD and its
+                group companies<br/>
+                Data collected - name, surname, e-mail, mobile phone no.<br/>
+                Data storage – 30 days or until revocation<br/>
+                Data Subject rights – To acess data, revoke the consent and change data upon request.<br/>
+                Please contact: TBD
+            </div>
             <input type="checkbox" id="scales" name="scales"/> <label>I accept the terms and conditions </label>
             <br/>
             <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Start
