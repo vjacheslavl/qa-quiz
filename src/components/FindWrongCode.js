@@ -37,7 +37,7 @@ class FindWrongCode extends Component {
     }
 
     render() {
-        return <div>
+        return <div className="singleQuestion">
             <legend>{quizQuestionsList.length+1}. What is wrong with this code?</legend>
             click the lines that you don't like!
             <div>

@@ -59,7 +59,7 @@ class SpotTheDifferences extends Component {
     }
 
     render() {
-        return <div>
+        return <div className="singleQuestion">
             <legend>{quizQuestionsList.length+2}. Spot {this.countQuestions()} differences</legend>
             click the difference when you have found it!
             <div className="canvas-container">
