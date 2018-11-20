@@ -1,9 +1,10 @@
 import React  from 'react';
 
 function Timer(props){
+    let seconds = props.time/1000;
     return (
         <div className="timer">
-           {props.time/1000} seconds to complete the quizzzzzz!!
+           {seconds !== -1? seconds+" seconds" : "Time is up!"}
         </div>
     );
 }

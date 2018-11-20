@@ -36,10 +36,14 @@ canvas {
 
 /* Timer Styling */
 .timer {
-    font-size: 50px;
-    font-weight: bold;
-    color: #59adfb;
+    font-size: 12px;
+    width: 100px;
+    background-color: white;
+    padding: 4px;
+    color: #0056b3;
+    border: 1px solid;
     margin-bottom: 25px;
+    position: fixed;  right: 5px; bottom: 5px;
 }
 
 /*!
