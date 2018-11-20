@@ -47,7 +47,7 @@ class App extends Component {
                 <Timer time={this.state.time}></Timer>
                 <QuizQuestions/>
                 <FindWrongCode/>
-                <SpotTheDifferences/>S
+                <SpotTheDifferences/>
                 <SubmitAnswers/>
             </div>
         );

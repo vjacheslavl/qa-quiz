@@ -24,9 +24,8 @@ class StartQuiz extends Component {
             <input type="email" className="form-control" id="personName"
                    onChange={this.handleChange.bind(this)}
                    placeholder="Enter email"/>
-            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone
-                else.
-            </small>
+            <input type="checkbox" id="scales" name="scales"/> <label>I accept the terms and conditions </label>
+            <br/>
             <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Start
                 Quiz
             </button>
