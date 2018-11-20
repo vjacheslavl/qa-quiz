@@ -6,7 +6,11 @@
 
 .codeLine {
     white-space: PRE;
-    font-size: 70%
+    font-size: 70%;
+    width: 100%;
+}
+.redHighlight {
+    background-color: #f5c6cb;
 }
 
 .highlight {

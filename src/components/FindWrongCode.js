@@ -26,15 +26,25 @@ class FindWrongCode extends Component {
         rawFile.send(null);
     }
 
+    changeColor(e) {
+        if (e.target.getAttribute("class") === "codeLine") {
+            e.target.setAttribute("class", "codeLine redHighlight");
+        }
+        else {
+            e.target.setAttribute("class", "codeLine");
+        }
+    }
+
     render() {
         return <div>
             <h3> Whats wrong in this code?</h3>
             click the lines that you don't like!
             <div>
                 <div className="highlight">
-                        {this.state.someText.split("\n").map((item, key) => {
-                            return <span className="codeLine" key={key}>{item}<br/></span>;
-                        })}
+                    {this.state.someText.split("\n").map((item, key) => {
+                        return <span className="codeLine" key={key}
+                                     onClick={this.changeColor.bind(this)}>{item}<br/></span>;
+                    })}
                 </div>
             </div>
         </div>
