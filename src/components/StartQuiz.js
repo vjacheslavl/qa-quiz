@@ -13,37 +13,53 @@ class StartQuiz extends Component {
             personName: '',
             email: '',
             accepted: false,
-            formErrors: {email: ''},
+            formErrors: {email: '', name: ''},
             emailValid: false,
+            nameValid: false
         };
     }
 
     handleEmailChange(e) {
-        const name = e.target.name;
+        const name = e.target.id;
         const value = e.target.value;
         this.setState({email: e.target.value},
             () => { this.validateField(name, value) });
     }
 
     handleNameChange(e) {
-        this.setState({personName: e.target.value});
+        const name = e.target.id;
+        const value = e.target.value;
+        this.setState({personName: e.target.value},
+            () => { this.validateField(name, value) });
     }
 
     validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors;
-        let emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        let emailValid = this.state.emailValid;
+        let nameValid = this.state.nameValid;
 
-        fieldValidationErrors.email = emailValid ? '' : 'Please enter valid a ';
-
+        switch (fieldName) {
+            case 'personEmail':
+                emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+                fieldValidationErrors.email = emailValid ? '' : 'Please enter a valid ';
+                break;
+            case 'personName':
+                nameValid = value.length > 1;
+                fieldValidationErrors.name = nameValid ? '' : 'Please enter a valid ';
+                break;
+            default:
+                break;
+        }
         this.setState({formErrors: fieldValidationErrors,
             emailValid: emailValid,
+            nameValid: nameValid
         }, this.validateForm);
     }
 
-    validateForm() {
-        this.setState({formValid: this.state.emailValid});
-    }
 
+    validateForm() {
+        this.setState({formValid: this.state.emailValid && this.state.nameValid});
+    }
 
     render() {
         return <div className="text-center m-5">
