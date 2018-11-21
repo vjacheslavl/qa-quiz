@@ -14,8 +14,10 @@ class SubmitAnswers extends Component {
     handleClick(e) {
         const requestBody = {
             personName: this.props.personName,
+            email: this.props.email,
             answers: this.props.answers,
-            differences: this.props.differences
+            differences: this.props.differences,
+            codeLines: this.props.codeLines,
         };
         console.log(requestBody);
         insertSomething(requestBody).then((result) => {
@@ -51,6 +53,8 @@ async function insertSomething(params) {
 function mapStateToProps(state) {
     return {
         personName: state.personName,
+        email: state.email,
+        codeLines: state.codeLines,
         differences: state.differences,
         answers: state.answers
     }

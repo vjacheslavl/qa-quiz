@@ -92,7 +92,7 @@ class StartQuiz extends Component {
                 Please contact: dpo@evolutiongaming.com <br/>
             </div>
             <input id="accept" type="checkbox" onClick={() => this.setState({accepted: !this.state.accepted})}/>
-            <label for="accept" style={{paddingLeft: "5px"}}> I accept the terms and conditions </label>
+            <label htmlFor="accept" style={{paddingLeft: "5px"}}> I accept the terms and conditions </label>
             <br/>
             <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}
                     disabled={!this.state.formValid || !this.state.accepted}>Start Quiz
