@@ -8,11 +8,14 @@ class PageRoutes extends Component {
     render() {
         return (
             <div className="container">
-                <div className="text-center mb-4"><img src={logo}/></div>
-
                 <video muted loop id="myVideo" autoPlay preload="auto">
                     <source src={require("./hex.mp4")} type="video/mp4"/>
                 </video>
+
+                <div className="logo">
+                    <img src={require("./logo.svg")}/>
+                </div>
+
                 <div className="content">
                     <BrowserRouter>
                         <div>
