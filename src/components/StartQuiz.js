@@ -10,11 +10,16 @@ class StartQuiz extends Component {
         super();
         this.state = {
             personName: '',
+            email: '',
             accepted: false,
         };
     }
 
-    handleChange(e) {
+    handleEmailChange(e) {
+        this.setState({email: e.target.value});
+    }
+
+    handleNameChange(e) {
         this.setState({personName: e.target.value});
     }
 
@@ -22,24 +27,32 @@ class StartQuiz extends Component {
     render() {
         return <div className="text-center m-5">
             <label>Take our QA quiz to test your knowledge and win a prize!</label>
-            <input type="email"
+            <input type="text"
                    className="form-control"
                    id="personName"
-                   onChange={this.handleChange.bind(this)}
+                   onChange={this.handleNameChange.bind(this)}
+                   placeholder="Enter name and surname"
+                   required={true}
+            />
+            <input type="email"
+                   className="form-control"
+                   id="personEmail"
+                   onChange={this.handleEmailChange.bind(this)}
                    placeholder="Enter email"
                    required={true}
             />
             <div className="termsAndConditions">
-Privacy policy <br />
-Data Controller – SIA Evolution Latvia (Latvia), registration No. 40003815611 <br />
-Data Collection Purpose – to be informed about carrier opportunities in Evolution Latvia and its group companies <br />
-Data collected - name, surname, e-mail, mobile phone no. <br />
-Data storage – 30 days or until revocation. <br />
-Data Subject rights – To acess data, revoke the consent and change data upon request. <br />
-Please contact: dpo@evolutiongaming.com <br />
+                Privacy policy <br/>
+                Data Controller – SIA Evolution Latvia (Latvia), registration No. 40003815611 <br/>
+                Data Collection Purpose – to be informed about carrier opportunities in Evolution Latvia and its group
+                companies <br/>
+                Data collected - name, surname, e-mail, mobile phone no. <br/>
+                Data storage – 30 days or until revocation. <br/>
+                Data Subject rights – To acess data, revoke the consent and change data upon request. <br/>
+                Please contact: dpo@evolutiongaming.com <br/>
             </div>
             <input id="accept" type="checkbox" onClick={() => this.setState({accepted: !this.state.accepted})}/>
-            <label for="accept" style={{ paddingLeft: "5px" }}> I accept the terms and conditions </label>
+            <label for="accept" style={{paddingLeft: "5px"}}> I accept the terms and conditions </label>
             <br/>
             <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Start
                 Quiz
@@ -48,8 +61,8 @@ Please contact: dpo@evolutiongaming.com <br />
     }
 
     handleClick(e) {
-        if(this.state.personName && this.state.accepted) {
-            this.props.storePerson(this.state.personName);
+        if (this.state.personName && this.state.accepted && this.state.email) {
+            this.props.storePerson(this.state);
             this.props.history.push('/quiz')
         }
     }
@@ -58,7 +71,8 @@ Please contact: dpo@evolutiongaming.com <br />
 
 function mapStateToProps(state) {
     return {
-        personName: state.personName
+        personName: state.personName,
+        email: state.email
     }
 }
 

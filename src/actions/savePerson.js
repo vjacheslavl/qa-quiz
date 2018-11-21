@@ -1,6 +1,6 @@
-export const savePerson = (personName) => {
+export const savePerson = (data) => {
     return {
         type: "PERSON_SAVED",
-        payload: personName
+        payload: data
     }
 }

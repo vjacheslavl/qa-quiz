@@ -1,4 +1,4 @@
-export default function (state = {differences: {}, answers: {}, personName: ""}, action) {
+export default function (state = {differences: {}, answers: {}, personName: "", email: ""}, action) {
     switch (action.type) {
         case "ANSWERS_SAVED":
             return {
@@ -13,7 +13,8 @@ export default function (state = {differences: {}, answers: {}, personName: ""},
         case "PERSON_SAVED":
             return {
                 ...state,
-                personName: action.payload,
+                personName: action.payload.personName,
+                email: action.payload.email,
             }
         default:
             return state;
