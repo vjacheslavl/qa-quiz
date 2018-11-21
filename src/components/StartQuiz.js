@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom'
 import {bindActionCreators} from "redux";
 import {savePerson} from "../actions/savePerson";
 import connect from "react-redux/es/connect/connect";
+import { FormErrors } from './FormErrors';
 
 class StartQuiz extends Component {
 
@@ -12,21 +13,44 @@ class StartQuiz extends Component {
             personName: '',
             email: '',
             accepted: false,
+            formErrors: {email: ''},
+            emailValid: false,
         };
     }
 
     handleEmailChange(e) {
-        this.setState({email: e.target.value});
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({email: e.target.value},
+            () => { this.validateField(name, value) });
     }
 
     handleNameChange(e) {
         this.setState({personName: e.target.value});
     }
 
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+
+        fieldValidationErrors.email = emailValid ? '' : 'Please enter valid a ';
+
+        this.setState({formErrors: fieldValidationErrors,
+            emailValid: emailValid,
+        }, this.validateForm);
+    }
+
+    validateForm() {
+        this.setState({formValid: this.state.emailValid});
+    }
+
 
     render() {
         return <div className="text-center m-5">
             <label>Take our QA quiz to test your knowledge and win a prize!</label>
+            <div className="errorMessage">
+                <FormErrors formErrors={this.state.formErrors} />
+            </div>
             <input type="text"
                    className="form-control"
                    id="personName"
@@ -54,8 +78,8 @@ class StartQuiz extends Component {
             <input id="accept" type="checkbox" onClick={() => this.setState({accepted: !this.state.accepted})}/>
             <label for="accept" style={{paddingLeft: "5px"}}> I accept the terms and conditions </label>
             <br/>
-            <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Start
-                Quiz
+            <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}
+                    disabled={!this.state.formValid || !this.state.accepted}>Start Quiz
             </button>
         </div>
     }
