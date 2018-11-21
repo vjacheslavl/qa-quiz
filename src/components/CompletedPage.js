@@ -11,7 +11,8 @@ class CompletedPage extends Component {
     }
 
     handleClick(e) {
-        this.props.history.push('/')
+        this.props.history.push('/');
+        window.location.reload();
     }
 }
 export default withRouter(CompletedPage);

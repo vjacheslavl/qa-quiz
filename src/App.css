@@ -58,8 +58,6 @@ body {
     max-width: 874px;
     display: flex;
     justify-content: space-around;
-    transform: scale(.75);
-    transform-origin: top center;
 }
 
 canvas {
