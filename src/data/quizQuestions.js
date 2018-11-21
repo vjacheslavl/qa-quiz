@@ -92,7 +92,7 @@ let quizQuestionsList = [
                 id: "q4_2"
             },
             {
-                answer: "Create the test fixtures, loan them to test and clean up afterwards",
+                answer: "Create fixtures, loan them to the test and clean up afterwards automatically",
                 correct: true,
                 id: "q4_3"
             },
@@ -134,12 +134,12 @@ let quizQuestionsList = [
         name: "q6",
         answers: [
             {
-                answer: "less server.log",
+                answer: "cat server.log",
                 correct: false,
                 id: "q6_1"
             },
             {
-                answer: "tail -f server.log",
+                answer: "tail -fn 1000 server.log",
                 correct: true,
                 id: "q6_2"
             },
@@ -156,11 +156,11 @@ let quizQuestionsList = [
         ]
     },
     {
-        question: "Think of BDD test that needs to check that count of elements on the page is correct. Where would you put “assertEquals(“Incorrect number of elements displayed”, count, 5)” statement?",
+        question: "Think of BDD (e.g. Cucumber) test that needs to check that count of elements on the page is correct. Where would you put “assertEquals(“Incorrect number of elements displayed”, count, 5)” statement?",
         name: "q7",
         answers: [
             {
-                answer: "Right in the .feature scenario",
+                answer: "Right in the .feature file",
                 correct: false,
                 id: "q7_1"
             },
@@ -170,7 +170,7 @@ let quizQuestionsList = [
                 id: "q7_2"
             },
             {
-                answer: "In the step definition of the Then step",
+                answer: "In the step definition of the accordant Then step",
                 correct: true,
                 id: "q7_3"
             },
@@ -186,7 +186,7 @@ let quizQuestionsList = [
         name: "q8",
         answers: [
             {
-                answer: "A powerful implementation of Selenium hub using Docker containers to launch browsers",
+                answer: "An implementation of Selenium hub using Docker containers to launch browsers",
                 correct: true,
                 id: "q8_1"
             },
