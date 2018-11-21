@@ -82,6 +82,11 @@ canvas {
     background-color: #f5c6cb;
 }
 
+.errorMessage {
+    color: red;
+    font-size: 1rem;
+}
+
 .highlight {
     margin-bottom: 14px;
     background-color: #f7f7f9;
@@ -95,7 +100,7 @@ canvas {
     background-color: #f7f7f9;
     text-align: left;
     font-size: 0.75rem;
-    border: 1px solid #e1e1e8;
+    border: 0px solid #e1e1e8;
     overflow: scroll;
     margin: 0;
     padding: 20px;
@@ -2025,7 +2030,8 @@ pre code {
     width: 100%;
     height: calc(2.25rem + 2px);
     padding: .375rem .75rem;
-    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 1rem;
     line-height: 1.5;
     color: #495057;
