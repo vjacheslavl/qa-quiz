@@ -1766,22 +1766,24 @@ pre code {
 .table {
     width: 100%;
     margin-bottom: 1rem;
-    background-color: transparent
+    background-color: transparent;
+    border-radius: 5px;
 }
 
 .table td, .table th {
-    padding: .75rem;
+    padding: .75rem 1rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6
 }
 
 .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6
+    background-color: #f7f7f9;
+    color: rgba(3,52,110,.9);
 }
 
 .table tbody + tbody {
-    border-top: 2px solid #dee2e6
+    border-top: 2px solid #dee2e6;
 }
 
 .table .table {
