@@ -27,6 +27,9 @@ class SpotTheDifferences extends Component {
      *  @return {undefined}
      * */
     handleClick(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
         const mousePos = {
             x: e.nativeEvent.offsetX,
             y: e.nativeEvent.offsetY

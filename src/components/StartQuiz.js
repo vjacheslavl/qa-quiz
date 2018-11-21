@@ -9,7 +9,8 @@ class StartQuiz extends Component {
     constructor() {
         super();
         this.state = {
-            personName: ''
+            personName: '',
+            accepted: false,
         };
     }
 
@@ -21,19 +22,24 @@ class StartQuiz extends Component {
     render() {
         return <div className="text-center m-5">
             <label>Take our QA quiz to test your knowledge and win a prize!</label>
-            <input type="email" className="form-control" id="personName"
+            <input type="email"
+                   className="form-control"
+                   id="personName"
                    onChange={this.handleChange.bind(this)}
-                   placeholder="Enter email"/>
+                   placeholder="Enter email"
+                   required={true}
+            />
             <div className="termsAndConditions">
-                Data Controller – TBD <br/>
-                Data Collection Purpose – to be informed about carrier opportunities in TBD and its
-                group companies<br/>
-                Data collected - name, surname, e-mail, mobile phone no.<br/>
-                Data storage – 30 days or until revocation<br/>
-                Data Subject rights – To acess data, revoke the consent and change data upon request.<br/>
-                Please contact: TBD
+Privacy policy <br />
+Data Controller – SIA Evolution Latvia (Latvia), registration No. 40003815611 <br />
+Data Collection Purpose – to be informed about carrier opportunities in Evolution Latvia and its group companies <br />
+Data collected - name, surname, e-mail, mobile phone no. <br />
+Data storage – 30 days or until revocation. <br />
+Data Subject rights – To acess data, revoke the consent and change data upon request. <br />
+Please contact: dpo@evolutiongaming.com <br />
             </div>
-            <input type="checkbox" id="scales" name="scales"/> <label>I accept the terms and conditions </label>
+            <input id="accept" type="checkbox" onClick={() => this.setState({accepted: !this.state.accepted})}/>
+            <label for="accept" style={{ paddingLeft: "5px" }}> I accept the terms and conditions </label>
             <br/>
             <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Start
                 Quiz
@@ -42,8 +48,10 @@ class StartQuiz extends Component {
     }
 
     handleClick(e) {
-        this.props.storePerson(this.state.personName);
-        this.props.history.push('/quiz')
+        if(this.state.personName && this.state.accepted) {
+            this.props.storePerson(this.state.personName);
+            this.props.history.push('/quiz')
+        }
     }
 
 }
