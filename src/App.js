@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Timer from './components/Timer';
 import SpotTheDifferences from './components/SpotTheDifferences';
 import FindWrongCode from './components/FindWrongCode';

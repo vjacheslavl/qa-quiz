@@ -1,12 +1,68 @@
+html, body, #app {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.logo {
+    position: fixed;
+    z-index: 1;
+    top: 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(3, 52, 110, .9);
+    top: 0;
+    left: 0;
+    color: #f7f7f9;
+}
+
+.App {
+    position: absolute;
+    top: 190px;
+    left: 5px;
+    right: 5px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    height: 500px;
+    background: rgba(0,0,0, .3);
+    padding: 20px;
+}
 /* Canvas Styling */
 .canvas-container {
     margin: 0 auto;
     max-width: 874px;
+    display: flex;
+    justify-content: space-around;
+    transform: scale(.75);
+    transform-origin: top center;
 }
 
 canvas {
-    width: 437px;
-    height: 777px;
     display: inline-block;
 }
 
@@ -15,12 +71,15 @@ canvas {
     font-size: 70%;
     width: 100%;
 }
+
 .singleQuestion {
     margin-top: 20px;
 }
+
 .quizImage {
     margin-bottom: 10px;
 }
+
 .redHighlight {
     background-color: #f5c6cb;
 }
@@ -30,22 +89,24 @@ canvas {
     background-color: #f7f7f9;
     border: 1px solid #e1e1e8;
     border-radius: 4px;
+    color: black;
 }
 
 .termsAndConditions {
     font-style: italic;
     background-color: #f7f7f9;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 80%;
     text-align: left;
     font-size: 0.75rem;
     border: 1px solid #e1e1e8;
-    overflow:scroll;
-    height: 130px;
+    overflow: scroll;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    height: 170px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 2px dashed rgba(3, 52, 110, .9);
+    color: #1b1e21;
 }
 
 /* Timer Styling */
@@ -56,8 +117,11 @@ canvas {
     padding: 4px;
     color: #0056b3;
     border: 1px solid;
-    margin-bottom: 25px;
-    position: fixed;  right: 5px; bottom: 5px;
+    top: 5px;
+    right: 5px;
+    float: right;
+    position: sticky;
+    z-index: 1;
 }
 
 /*!
