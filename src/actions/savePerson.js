@@ -3,4 +3,4 @@ export const savePerson = (data) => {
         type: "PERSON_SAVED",
         payload: data
     }
-}
+};

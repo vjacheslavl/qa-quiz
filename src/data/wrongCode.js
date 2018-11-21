@@ -1,4 +1,4 @@
-    @Test
+export const wrongCode = `   @Test
     public void testCase237() throws InterruptedException {
 
         dealer.cancelGame();
@@ -25,4 +25,4 @@
         dealer.cancelGame(); //cancel for next test!
         player.waitForStatus(STATUS_GAME_CANCELLED);
         String status = player.getStatus();
-    }
+    }`;

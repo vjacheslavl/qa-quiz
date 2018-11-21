@@ -3,4 +3,4 @@ export const saveDifferences = (answers) => {
         type: "SPOT_THE_DIFFERENCES_SAVED",
         payload: answers
     }
-}
+};

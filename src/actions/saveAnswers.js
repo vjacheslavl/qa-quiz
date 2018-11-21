@@ -3,4 +3,4 @@ export const saveAnswers = (answers) => {
         type: "ANSWERS_SAVED",
         payload: answers
     }
-}
+};
