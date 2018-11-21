@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
+import quizQuestionsList from '../data/quizQuestions';
+import wrongCodeLines from '../data/wrongCodeLines';
 
 class ResultsPage extends Component {
     constructor(props) {
@@ -54,7 +56,8 @@ class ResultsPage extends Component {
             const differences = data[i].differences.filter((item) => item.found === true).length;
             const answers = countCorrectQuestions(data[i]);
             const codeLine = countCodeLines(data[i]);
-            const total = 20;
+            const total = differences + answers + codeLine;
+
             participants.push(<tr key={i}>
                 <td>{data[i].personName}</td>
                 <td>{answers}</td>
@@ -69,11 +72,24 @@ class ResultsPage extends Component {
 
 }
 
-function countCorrectQuestions(datum) {
-    return 44;
+function countCorrectQuestions(item) {
+    return item.answers.filter((answer) => isCorrectAnswer(answer)).length;
 }
-function countCodeLines(datum) {
-    return 33;
+
+function isCorrectAnswer(answerData) {
+    const foundQuestion = quizQuestionsList.filter((questionItem) => questionItem.name === answerData.question)[0];
+    const foundAnswer = foundQuestion.answers.filter((answerItem) => answerItem.id === answerData.answer);
+    return foundAnswer.length === 0 ? false : foundAnswer[0].correct;
+}
+
+function countCodeLines(item) {
+    return item.codeLines.filter((codeline) => isCorrectlyMarkedCodeline(codeline)).length;
+
+}
+
+function isCorrectlyMarkedCodeline(codelineData) {
+    const foundCodeline = wrongCodeLines.filter((codelineItem) => (codelineItem.line - 1) === codelineData.key)[0];
+    return foundCodeline.bad === codelineData.marked;
 }
 
 export default withRouter(ResultsPage);
