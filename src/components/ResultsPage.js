@@ -28,14 +28,14 @@ class ResultsPage extends Component {
 
         return (
             <div>
-                <table border="1">
+                <table className="table table-active table-responsive table-hover">
                     <thead>
                     <tr>
-                        <td>Participant</td>
-                        <td>Answers</td>
-                        <td>Code Lines</td>
-                        <td>Differences</td>
-                        <td>Total</td>
+                        <th>Participant</th>
+                        <th>Answers</th>
+                        <th>Code Lines</th>
+                        <th>Differences</th>
+                        <th>Total</th>
                     </tr>
                     </thead>
                     <tbody>
