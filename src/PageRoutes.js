@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import App from "./App";
 import Home from "./components/Home";
 import CompletedPage from "./components/CompletedPage";
+import ResultsPage from "./components/ResultsPage";
 
 class PageRoutes extends Component {
     render() {
@@ -22,6 +23,7 @@ class PageRoutes extends Component {
                             <Route path="/" component={Home} exact/>
                             <Route path="/quiz" component={App}/>
                             <Route path="/completed" component={CompletedPage}/>
+                            <Route path="/processed" component={ResultsPage}/>
                         </div>
                     </BrowserRouter>
                 </div>
