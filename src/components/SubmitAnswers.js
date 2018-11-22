@@ -15,6 +15,7 @@ class SubmitAnswers extends Component {
         const requestBody = {
             personName: this.props.personName,
             email: this.props.email,
+            secondsRemaining: parseInt(document.querySelector("#timer").getAttribute("seconds")),
             answers: this.props.answers,
             differences: this.props.differences,
             codeLines: this.props.codeLines,

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
-import {countCodeLines, countCorrectQuestions, countDifferences} from "../utils/CalculateScore";
+import {countCodeLines, countCorrectQuestions, countDifferences, calculateTotal} from "../utils/CalculateScore";
 
 class ResultsPage extends Component {
     constructor(props) {
@@ -52,10 +52,10 @@ class ResultsPage extends Component {
         let participants = [];
         for (let i = 0; i < data.length; i++) {
 
-            const differences = countDifferences(data[i].differences);
-            const answers = countCorrectQuestions(data[i].answers);
-            const codeLine = countCodeLines(data[i].codeLines);
-            const total = differences + answers + codeLine;
+            let differences = countDifferences(data[i].differences);
+            let answers = countCorrectQuestions(data[i].answers);
+            let codeLine = countCodeLines(data[i].codeLines);
+            let total = calculateTotal(answers, differences, codeLine);
 
             participants.push(<tr key={i}>
                 <td>{data[i].personName}</td>

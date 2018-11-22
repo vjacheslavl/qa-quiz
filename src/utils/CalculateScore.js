@@ -3,7 +3,7 @@ import wrongCodeLines from "../data/wrongCodeLines";
 
 
 export function countCorrectQuestions(answers) {
-    return answers.filter((answer) => isCorrectAnswer(answer)).length;
+    return parseFloat(answers.filter((answer) => isCorrectAnswer(answer)).length).toPrecision(2);
 }
 
 function isCorrectAnswer(answerData) {
@@ -13,7 +13,7 @@ function isCorrectAnswer(answerData) {
 }
 
 export function countCodeLines(codeLines) {
-    return codeLines.filter((codeline) => isCorrectlyMarkedCodeline(codeline)).length;
+    return parseFloat(9 * codeLines.filter((codeline) => isCorrectlyMarkedCodeline(codeline)).length / 28).toPrecision(2);
 
 }
 
@@ -24,5 +24,9 @@ function isCorrectlyMarkedCodeline(codelineData) {
 
 
 export function countDifferences(differences) {
-    return differences.filter((item) => item.found === true).length;
+    return parseFloat(9 * differences.filter((item) => item.found === true).length / differences.length).toPrecision(2);
+}
+
+export function calculateTotal(answers, differences, codeLine) {
+    return parseFloat(differences) + parseFloat(answers) + parseFloat(codeLine);
 }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
-import {countCodeLines, countCorrectQuestions, countDifferences} from "../utils/CalculateScore";
+import {calculateTotal, countCodeLines, countCorrectQuestions, countDifferences} from "../utils/CalculateScore";
 import connect from "react-redux/es/connect/connect";
 
 class CompletedPage extends Component {
@@ -10,7 +10,7 @@ class CompletedPage extends Component {
         const differences = countDifferences(this.props.differences);
         const answers = countCorrectQuestions(this.props.answers);
         const codeLine = countCodeLines(this.props.codeLines);
-        const total = differences + answers + codeLine;
+        const total = calculateTotal(answers, differences, codeLine);
 
         this.state = {
             total: total

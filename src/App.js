@@ -42,9 +42,10 @@ class App extends Component {
     }
 
     render() {
+        let seconds = this.state.time/1000;
         return (
             <div className="App">
-                <Timer time={this.state.time}></Timer>
+                <Timer refs="timer" time={seconds}></Timer>
                 <QuizQuestions/>
                 <FindWrongCode/>
                 <SpotTheDifferences/>
