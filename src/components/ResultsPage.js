@@ -37,6 +37,7 @@ class ResultsPage extends Component {
                         <th>Code Lines</th>
                         <th>Differences</th>
                         <th>Total</th>
+                        <th>Time (sec.)</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -56,6 +57,7 @@ class ResultsPage extends Component {
             let answers = countCorrectQuestions(data[i].answers);
             let codeLine = countCodeLines(data[i].codeLines);
             let total = calculateTotal(answers, differences, codeLine);
+            let seconds = data[i].secondsRemaining;
 
             participants.push(<tr key={i}>
                 <td>{data[i].personName}</td>
@@ -63,6 +65,7 @@ class ResultsPage extends Component {
                 <td>{codeLine}</td>
                 <td>{differences}</td>
                 <td>{total}</td>
+                <td>{seconds}</td>
             </tr>)
         }
         return participants;

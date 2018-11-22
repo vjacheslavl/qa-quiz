@@ -70,6 +70,7 @@ class StartQuiz extends Component {
             <input type="text"
                    className="form-control"
                    id="personName"
+                   maxlength="80"
                    onChange={this.handleNameChange.bind(this)}
                    placeholder="Enter name and surname"
                    required={true}
@@ -77,6 +78,7 @@ class StartQuiz extends Component {
             <input type="email"
                    className="form-control"
                    id="personEmail"
+                   maxlength="80"
                    onChange={this.handleEmailChange.bind(this)}
                    placeholder="Enter email"
                    required={true}
