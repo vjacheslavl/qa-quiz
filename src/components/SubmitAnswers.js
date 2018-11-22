@@ -41,7 +41,6 @@ async function insertSomething(params) {
             body: JSON.stringify(params)
         });
         let responseJson = await response.json();
-        console.log("RJSON " + responseJson.personName)
         return responseJson.result;
     }
     catch (error) {
