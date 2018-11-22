@@ -196,7 +196,7 @@ let quizQuestionsList = [
                 id: "q8_2"
             },
             {
-                answer: "An implementation of Selenium WebDriver for Python",
+                answer: "An implementation of Selenium WebDriver for Android",
                 correct: false,
                 id: "q8_3"
             },

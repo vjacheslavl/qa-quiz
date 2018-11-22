@@ -59,16 +59,30 @@ class ResultsPage extends Component {
             let total = calculateTotal(answers, differences, codeLine);
             let seconds = data[i].secondsRemaining;
 
-            participants.push(<tr key={i}>
-                <td>{data[i].personName}</td>
-                <td>{answers}</td>
-                <td>{codeLine}</td>
-                <td>{differences}</td>
-                <td>{total}</td>
-                <td>{seconds}</td>
+            participants.push({
+                personName: data[i].personName,
+                answers: answers,
+                codeLine: codeLine,
+                differences: differences,
+                total: total,
+                seconds: seconds
+            })
+        }
+
+        let sortedParticipants = participants.sort((a, b) => b.total - a.total);
+        let printedParticipants = [];
+        for (let i = 0; i < sortedParticipants.length; i++) {
+            printedParticipants.push(<tr key={i}>
+                <td>{sortedParticipants[i].personName}</td>
+                <td>{sortedParticipants[i].answers}</td>
+                <td>{sortedParticipants[i].codeLine}</td>
+                <td>{sortedParticipants[i].differences}</td>
+                <td>{sortedParticipants[i].total}</td>
+                <td>{sortedParticipants[i].seconds}</td>
             </tr>)
         }
-        return participants;
+
+        return printedParticipants;
 
     }
 
