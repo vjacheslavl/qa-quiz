@@ -10,7 +10,7 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            time: 360000
+            time: 0
         };
     }
 
@@ -22,7 +22,7 @@ class App extends Component {
         let time = this.state.time;
         this.interval = setInterval(() => {
             if (time >= 0) {
-                time -= 1000;
+                time += 1000;
                 this.setState({
                     time
                 });
